@@ -186,3 +186,5 @@ figcaption { font-size: 16px; color: var(--grau); margin-top: 6px; }
 .sequenz .notiz-t { fill: var(--dunkel); font-size: 18px; }
 .sequenz .schritt-t { text-anchor: start; fill: var(--dunkel); font-size: 23px; font-weight: bold; }
 .sequenz .schritt-s { text-anchor: start; fill: var(--grau); font-size: 16px; }
+.frage { margin: 16px 0 0; font-weight: bold; color: var(--blau); font-size: 24px; }
+.frage span { font-weight: normal; color: var(--text); font-size: 20px; }

@@ -175,3 +175,14 @@ figcaption { font-size: 16px; color: var(--grau); margin-top: 6px; }
 .schritt { font-weight: bold; color: var(--dunkel); font-size: 24px; margin: 0 0 10px; display: flex; align-items: center; gap: 10px; }
 .schritt .nr { display: inline-block; width: 34px; height: 34px; border-radius: 50%; background: var(--dunkel); color: #fff; text-align: center; line-height: 34px; font-size: 18px; }
 .einsatz figcaption { font-size: 17px; }
+
+/* Sequenzdiagramm */
+.einleitung.kurz { font-size: 20px; margin: -10px 0 12px; }
+.ablaufbild { display: block; height: 405px; max-width: 100%; object-fit: contain; margin: 0 auto; }
+.sequenz { display: block; width: 100%; height: auto; font-family: Arial, Helvetica, "Liberation Sans", sans-serif; }
+.sequenz text { text-anchor: middle; }
+.sequenz .kopf-t { fill: #fff; font-size: 18px; font-weight: bold; }
+.sequenz .pfeil-t { fill: #222; font-size: 19px; }
+.sequenz .notiz-t { fill: var(--dunkel); font-size: 18px; }
+.sequenz .schritt-t { text-anchor: start; fill: var(--dunkel); font-size: 23px; font-weight: bold; }
+.sequenz .schritt-s { text-anchor: start; fill: var(--grau); font-size: 16px; }

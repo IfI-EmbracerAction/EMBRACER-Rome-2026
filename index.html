@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Robots for bike sharing? — Pilot Action Schkeuditz (EMBRACER, Rome 2026)</title>
+<meta name="viewport" content="width=1320">
+<link rel="stylesheet" href="slides.css">
+<style>
+.download { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+  max-width: 1280px; margin: 0 auto 24px; padding: 14px 24px; background: #0069b4; color: #fff; font-size: 20px; }
+.download a { color: #fff; font-weight: bold; background: #f39200; padding: 8px 18px; border-radius: 4px; text-decoration: none; }
+body { padding-top: 0; }
+@media print { .no-print { display: none; } }
+</style>
+</head>
+<body>
+<div class="download no-print">
+  <span>EMBRACER Workshop · Rome · 17 November 2026</span>
+  <a href="EMBRACER_Rome_2026_Zug.pdf" download>Download slides (PDF)</a>
+</div>
+
+<!-- 1 Titel -->
+<section class="slide titel">
+  <header class="logos">
+    <img src="img/interreg_embracer.png" alt="Interreg Europe – Co-funded by the European Union – EMBRACER" class="banner">
+    <span class="rechts">
+      <img src="img/aufbauwerk.png" alt="Aufbauwerk Region Leipzig" class="logo-klein">
+      <img src="img/tubaf.svg" alt="TU Bergakademie Freiberg" class="logo-klein">
+    </span>
+  </header>
+  <div class="titel-inhalt">
+    <div class="titel-text">
+      <p class="kicker">EMBRACER · Pilot Action Schkeuditz</p>
+      <h1>Robots for bike sharing?</h1>
+      <p class="untertitel">What five months of “humans playing robot” taught us about redistributing shared bikes in small towns</p>
+      <p class="autor"><strong>Prof. Dr.-Ing. Sebastian Zug</strong><br>TU Bergakademie Freiberg, Institute of Computer Science</p>
+      <p class="anlass">EMBRACER Workshop · Rome · 17 November 2026</p>
+    </div>
+    <img src="img/raeder.jpg" alt="Shared bikes in Schkeuditz" class="titel-bild">
+  </div>
+</section>
+
+<!-- 2 Motivation: Problem -->
+<section class="slide">
+  <p class="kapitel">Motivation</p>
+  <h2>Shared bikes end up in the wrong places</h2>
+  <div class="zwei">
+    <ul class="punkte">
+      <li>Usage moves bikes <strong>systematically</strong>: they pile up where nobody needs them and are missing where someone is looking.</li>
+      <li>Redistribution is the <strong>largest single operating cost</strong> of bike sharing — 30 % of operating costs in Barcelona’s Bicing system <span class="quelle">(OBIS study)</span>.</li>
+      <li><strong>Small suburban systems</strong> are hit hardest: few bikes, dispersed settlements, and a fixed effort per truck tour.</li>
+    </ul>
+    <figure><img src="img/clusterkarte_en.png" alt="Parking clusters in Schkeuditz"><figcaption>Schkeuditz (≈ 18,000 inhabitants), parking clusters and how long bikes stand there</figcaption></figure>
+  </div>
+</section>
+
+<!-- 3 Konventionelle Ansätze vs Roboter -->
+<section class="slide">
+  <p class="kapitel">Motivation</p>
+  <h2>Conventional answers need volume — robots could work bike by bike</h2>
+  <p class="einleitung">Today: <strong>user incentives</strong> (e.g. free rides for returning bikes to sought-after places) and <strong>collection by van</strong>. Both pay off only when many bikes move at once — rare in small fleets.</p>
+  <table class="vergleich">
+    <thead><tr><th></th><th>Van-based redistribution</th><th class="neu">Robotic redistribution</th></tr></thead>
+    <tbody>
+      <tr><th>Batch size</th><td>groups of bikes</td><td class="neu">single bikes</td></tr>
+      <tr><th>Reach</td><td>stations accessible by road</td><td class="neu">also green paths and backyards</td></tr>
+      <tr><th>Network</td><td>road network</td><td class="neu">footpaths and cycle paths</td></tr>
+      <tr><th>Timing</td><td>periodic (e.g. every 14 days)</td><td class="neu">continuous</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 4 Vorarbeiten: R4R + ROSEE -->
+<section class="slide">
+  <p class="kapitel">Our groundwork</p>
+  <h2>Robots on footpaths are no longer science fiction</h2>
+  <div class="vorarbeit">
+    <div class="text-spalte">
+      <p><strong>Ready for Robots</strong> (German mFUND programme, 2022–2025): multimodal maps for autonomous micromobiles — with Schkeuditz as test area.</p>
+      <p><strong>ROSEE’s journey, 7 Oct 2026:</strong> from Freiberg to Dresden, <span class="zahl-inline">≈ 25 km</span> on its own wheels (≈ 47 km including car and tram).</p>
+      <p class="lehre">Lessons: grass is not an obstacle · the robot must know how wide the path is · roads without footpaths need their own rules.</p>
+      <div class="qr-zeile"><img src="img/qr_rosee.png" alt="QR code to ROSEE's route map" class="qr-klein"><span>Route map and photos<br><span class="url">sebastianzug.github.io/RoseesRoboterReise</span></span></div>
+    </div>
+    <div class="fotos-drei">
+      <img src="img/rosee_gaense.jpg" alt="ROSEE passing a goose meadow near Falkenberg">
+      <img src="img/rosee_gehweg.jpg" alt="ROSEE on a footpath in Dresden-Pennrich">
+      <img src="img/rosee_tram.jpg" alt="ROSEE in tram line 7 in front of the Semperoper" class="hoch">
+      <p class="bildnachweis">Photos: Sebastian Zug / TU Bergakademie Freiberg, CC BY 4.0</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 Experiment: Idee und Ablauf -->
+<section class="slide">
+  <p class="kapitel">Experiment</p>
+  <h2>Humans played the robot</h2>
+  <p class="einleitung">Before building a robot, we simulated its job: staff of Lineris GmbH followed algorithmically generated work plans and moved <strong>one bike at a time, pushing it along footpaths</strong>.</p>
+  <ol class="ablauf">
+    <li><span class="nr">1</span><strong>Observe</strong>nextbike’s public availability feed, every 10 minutes</li>
+    <li><span class="nr">2</span><strong>Predict</strong>parking clusters and demand per hour, weekday and month</li>
+    <li><span class="nr">3</span><strong>Plan</strong>an hourly work plan with QR-code navigation</li>
+    <li><span class="nr">4</span><strong>Act</strong>pick up a bike, push it to its target, take photos</li>
+    <li><span class="nr">5</span><strong>Verify</strong>bike movement in the feed, GNSS tracks, photos</li>
+  </ol>
+</section>
+
+<!-- 6 Umfang -->
+<section class="slide">
+  <p class="kapitel">Experiment</p>
+  <h2>Five months of real operation in Schkeuditz</h2>
+  <div class="zahlen">
+    <div><span class="zahl">72</span><span class="was">work plans on 56 deployment days<br>12 March – 31 July 2026</span></div>
+    <div><span class="zahl">741</span><span class="was">redistribution tasks</span></div>
+    <div><span class="zahl">406</span><span class="was">verifiably executed<br>(bike seen at its target)</span></div>
+    <div><span class="zahl">547 km</span><span class="was">of routes confirmed by GNSS</span></div>
+    <div><span class="zahl">≈ 90,900</span><span class="was">snapshots of the bike fleet<br>Dec 2024 – Sep 2026</span></div>
+    <div><span class="zahl">2,614</span><span class="was">photos of the bikes where they were found</span></div>
+  </div>
+  <p class="fussnote">Proving that a task was really done is harder than it sounds: the operator’s feed does not report rentals, so every bike state had to be reconstructed.</p>
+</section>
+
+<!-- 7 Ergebnis 1 -->
+<section class="slide">
+  <p class="kapitel">Results</p>
+  <h2>Moving the right bike matters</h2>
+  <div class="zwei gleich">
+    <div class="karte gut">
+      <p class="karte-titel">Isolated bikes outside clusters</p>
+      <p class="gross">+12 to +21</p>
+      <p>percentage points more likely to be used again within 24 h after being moved</p>
+    </div>
+    <div class="karte neutral">
+      <p class="karte-titel">Bikes taken from busy clusters</p>
+      <p class="gross">no gain</p>
+      <p>no measurable advantage: many bikes at one spot signal demand, not surplus</p>
+    </div>
+  </div>
+  <ul class="punkte schmal">
+    <li><strong>Selection rule for a robot:</strong> fetch bikes with at most one neighbour.</li>
+    <li>Three in ten trips start or end within 150 m of a suburban rail stop — <strong>bike sharing feeds public transport</strong>.</li>
+    <li>With 16–41 bikes, a strict proof of effect is not possible; a follow-up needs a randomised design.</li>
+  </ul>
+</section>
+
+<!-- 8 Ergebnis 2 -->
+<section class="slide">
+  <p class="kapitel">Results</p>
+  <h2>Can a robot grab the bike? Mostly, yes</h2>
+  <div class="zwei breit-links">
+    <figure><img src="img/fotos_en.png" alt="Typical situations in which bikes were found"></figure>
+    <div class="stat-spalte">
+      <p class="zahl">92 %</p>
+      <p>of the bikes had <strong>at least one freely accessible side</strong></p>
+      <p class="klein-absatz">245 photos assessed: a local vision-language model described each photo, a human checked and corrected it.</p>
+      <p class="klein-absatz">The <strong>rear</strong> is blocked least often (29 %). Typical obstacles: other bikes, fences, hedges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 Ergebnis 3 -->
+<section class="slide">
+  <p class="kapitel">Results</p>
+  <h2>The real challenge is the path</h2>
+  <div class="zwei gleich">
+    <div class="karte">
+      <p class="karte-titel">What the staff met — pushing bikes</p>
+      <ul>
+        <li>stairs and lifts at rail crossings</li>
+        <li>chicanes on cycle paths</li>
+        <li>push-button traffic lights</li>
+        <li>narrow passages, kerbs, informal paths</li>
+      </ul>
+      <p class="klein-absatz">Documented in a list of obstacles and 694 photos of the routes.</p>
+    </div>
+    <div class="karte">
+      <p class="karte-titel">What ROSEE met — driving itself</p>
+      <ul>
+        <li>vegetation mistaken for obstacles</li>
+        <li>unknown width of the walkable area</li>
+        <li>stretches without any footpath</li>
+        <li>dense traffic near the city</li>
+      </ul>
+      <p class="klein-absatz">≈ 25 of 47 km on its own wheels.</p>
+    </div>
+  </div>
+  <p class="botschaft">Both point to the same need: <strong>robot-ready maps of footpaths</strong> that know what is passable.</p>
+</section>
+
+<!-- 10 Mikromobile -->
+<section class="slide">
+  <p class="kapitel">Outlook</p>
+  <h2>Beyond bike sharing: micromobile robots in public space</h2>
+  <div class="anwendungen">
+    <div><strong>Shared-fleet logistics</strong>bikes, e-scooters, cargo bikes</div>
+    <div><strong>Last-mile delivery</strong>parcels and groceries on footpaths</div>
+    <div><strong>Cleaning</strong>paths, stops and squares</div>
+    <div><strong>Inspection</strong>footpaths, cycle infrastructure, signage</div>
+  </div>
+  <p class="einleitung">All of them need the same building blocks:</p>
+  <ul class="punkte zweispaltig">
+    <li>maps of footpaths that robots can trust</li>
+    <li>perception of what is passable</li>
+    <li>safe, predictable behaviour among pedestrians</li>
+    <li>permits for trips across municipalities</li>
+  </ul>
+</section>
+
+<!-- 11 Aufruf -->
+<section class="slide schluss">
+  <header class="logos">
+    <img src="img/interreg_embracer.png" alt="Interreg Europe – Co-funded by the European Union – EMBRACER" class="banner">
+    <span class="rechts">
+      <img src="img/aufbauwerk.png" alt="Aufbauwerk Region Leipzig" class="logo-klein">
+      <img src="img/tubaf.svg" alt="TU Bergakademie Freiberg" class="logo-klein">
+    </span>
+  </header>
+  <h2>Let’s build it together — a Horizon Europe proposal</h2>
+  <div class="aufruf">
+    <div>
+      <p class="karte-titel">We bring</p>
+      <ul>
+        <li>a robot platform on the road (ROSEE)</li>
+        <li>planning algorithms and a tested pipeline</li>
+        <li>data and methods from the Schkeuditz pilot</li>
+      </ul>
+    </div>
+    <div>
+      <p class="karte-titel">We are looking for</p>
+      <ul>
+        <li>cities and regions as pilot sites</li>
+        <li>bike and scooter sharing operators</li>
+        <li>robotics and manipulation companies</li>
+        <li>mobility research partners</li>
+      </ul>
+    </div>
+    <div class="kontakt">
+      <img src="img/qr_web.png" alt="QR code to the web version of this talk" class="qr">
+      <p class="url">ifi-embraceraction.github.io/<br>EMBRACER-Rome-2026</p>
+      <p><strong>Sebastian Zug</strong><br>sebastian.zug@informatik.tu-freiberg.de</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

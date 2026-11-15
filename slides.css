@@ -157,3 +157,13 @@ figcaption { font-size: 16px; color: var(--grau); margin-top: 6px; }
 .partner { font-size: 16px; color: var(--grau); }
 .schluss-partner { margin-top: 18px; }
 .kontakt .mail { white-space: nowrap; font-size: 16px; }
+
+/* Wirkung: Kurven + Kennzahlen */
+.zwei.wirkung { grid-template-columns: 1.75fr 0.55fr; gap: 30px; align-items: center; }
+.zwei.wirkung figure img { max-height: 390px; }
+.wirkung .gross { font-size: 46px; margin: 2px 0; }
+.wirkung .gross.grau { color: #8995a2; }
+.klein-text { font-size: 18px; margin: 0; }
+.karte-titel.abstand { margin-top: 22px; }
+.uebersicht { font-size: 20px; }
+.uebersicht tbody th { width: 30%; color: var(--text); }

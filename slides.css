@@ -167,3 +167,11 @@ figcaption { font-size: 16px; color: var(--grau); margin-top: 6px; }
 .karte-titel.abstand { margin-top: 22px; }
 .uebersicht { font-size: 20px; }
 .uebersicht tbody th { width: 30%; color: var(--text); }
+
+/* Ablauf eines Einsatzes */
+.einsatz { display: grid; grid-template-columns: 1fr 1fr 0.62fr; gap: 28px; align-items: start; }
+.einsatz img { height: 330px; width: 100%; object-fit: contain; object-position: left top; border: 1px solid #c9d3dd; }
+.einsatz figure:nth-child(2) img { object-fit: cover; }
+.schritt { font-weight: bold; color: var(--dunkel); font-size: 24px; margin: 0 0 10px; display: flex; align-items: center; gap: 10px; }
+.schritt .nr { display: inline-block; width: 34px; height: 34px; border-radius: 50%; background: var(--dunkel); color: #fff; text-align: center; line-height: 34px; font-size: 18px; }
+.einsatz figcaption { font-size: 17px; }
